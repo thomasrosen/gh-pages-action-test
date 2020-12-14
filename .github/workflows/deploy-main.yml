@@ -28,8 +28,6 @@ jobs:
         with:
           node-version: '12'
           check-latest: true
-      # - run: git config user.email "thomas.rosen@me.com"
-      # - run: git config user.name "Thomas Rosen"
       - run: yarn
         run: yarn build
       - name: Deploy to GitHub Pages

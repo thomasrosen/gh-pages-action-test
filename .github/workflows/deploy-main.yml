@@ -31,6 +31,8 @@ jobs:
           check-latest: true
       - name: Install Dependencies
         run: yarn
+      - name: Add gh-pages as a dev-dependency
+        run: yarn add --dev gh-pages
       - name: Build ReactJS App
         run: yarn build
       - name: Deploy to GitHub Pages

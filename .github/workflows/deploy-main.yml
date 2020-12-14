@@ -28,14 +28,14 @@ jobs:
         with:
           node-version: '12'
           check-latest: true
-      - run: git config user.email "thomas.rosen@me.com"
-      - run: git config user.name "Thomas Rosen"
+      # - run: git config user.email "thomas.rosen@me.com"
+      # - run: git config user.name "Thomas Rosen"
       - run: yarn
-      - run: yarn deploy
-      # - name: Deploy to GitHub Pages
-      #   uses: Cecilapp/GitHub-Pages-deploy@3.1.0
-      #   env:
-      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      #   with:
-      #     email: thomas.rosen@me.com
-      #     build_dir: build
+      - run: yarn predeploy
+      - name: Deploy to GitHub Pages
+        uses: Cecilapp/GitHub-Pages-deploy@3.1.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          email: thomas.rosen@me.com
+          build_dir: build
